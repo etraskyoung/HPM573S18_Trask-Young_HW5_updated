@@ -10,8 +10,6 @@ class Game(object):
         self._countWins = 0  # number of wins, set to 0 to begin
         self._reward = 0
         self._loss = 0
-        self._max = 0
-        self._min = 0
 
     def simulate(self, n_of_flips):
 
@@ -47,6 +45,8 @@ class SetOfGames:
     def __init__(self, prob_head, n_games):
         self._gameRewards = [] # create an empty list where rewards will be stored
         self._gameLosses = []
+        self._max = 0
+        self._min = 0
         # simulate the games
         for n in range(n_games):
             # create a new game
@@ -74,7 +74,7 @@ class SetOfGames:
     def get_ave_reward(self):
         """ returns the average reward from all games"""
         return sum(self._gameRewards) / len(self._gameRewards)
-    
+
     def get_probability_loss(self):
             """ returns the average reward from all games"""
             return sum(self._gameLosses) / len(self._gameLosses)
