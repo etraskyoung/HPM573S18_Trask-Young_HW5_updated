@@ -43,10 +43,10 @@ class Game(object):
 
 class SetOfGames:
     def __init__(self, prob_head, n_games):
-        self._gameRewards = [] # create an empty list where rewards will be stored
-        self._gameLosses = []
         self._max = 0
         self._min = 0
+        self._gameRewards = [] # create an empty list where rewards will be stored
+        self._gameLosses = []
         # simulate the games
         for n in range(n_games):
             # create a new game
